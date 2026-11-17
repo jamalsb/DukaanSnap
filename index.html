@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251e">
+  <meta name="description" content="Create a simple digital product catalog and receive orders on WhatsApp with DukaanSnap.">
+  <title>DukaanSnap | Your shop, online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">D</span><span>Dukaan<span class="accent">Snap</span></span></a>
+  <nav><a href="#catalog">Catalog</a><a href="#manage">Manage shop</a><button class="lang-btn" id="langBtn">اردو</button></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow" data-en="A simple online shop tool" data-ur="آپ کی دکان، اب آن لائن">A simple online shop tool</span>
+      <h1 data-en="Turn your products into a shareable catalog." data-ur="اپنی مصنوعات کا خوبصورت آن لائن کیٹلاگ بنائیں۔">Turn your products into a shareable catalog.</h1>
+      <p data-en="Add products, show prices and let customers order directly through WhatsApp." data-ur="مصنوعات اور قیمتیں شامل کریں اور گاہکوں سے واٹس ایپ پر آرڈر حاصل کریں۔">Add products, show prices and let customers order directly through WhatsApp.</p>
+      <a class="primary-btn" href="#manage" data-en="Create my catalog" data-ur="اپنا کیٹلاگ بنائیں">Create my catalog</a>
+      <div class="hero-note">✓ <span data-en="Free to try · Works on mobile" data-ur="مفت استعمال · موبائل پر بھی آسان">Free to try · Works on mobile</span></div>
+    </div>
+    <div class="hero-art">
+      <div class="mock-window">
+        <div class="mock-head"><span></span><span></span><span></span><b>My Store</b></div>
+        <div class="mock-photo">🧶</div><div class="mock-lines"><i></i><i></i></div>
+        <div class="mock-price">Rs. 1,250</div><div class="mock-order">Order on WhatsApp</div>
+      </div>
+      <div class="float-tag">✦ Easy catalog</div>
+    </div>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="section-heading"><div><span class="eyebrow" data-en="SHOP PREVIEW" data-ur="دکان کا نمونہ">SHOP PREVIEW</span><h2 id="storeTitle">My Little Store</h2><p id="storeDescription">Handpicked products, just for you.</p></div><span class="count-pill" id="productCount">0 products</span></div>
+    <div class="product-grid" id="productGrid"></div>
+    <p class="empty-state" id="emptyState">Your products will appear here. Add your first product below.</p>
+  </section>
+
+  <section class="section manage-section" id="manage">
+    <div class="section-heading"><div><span class="eyebrow">DASHBOARD</span><h2 data-en="Manage your shop" data-ur="اپنی دکان سنبھالیں">Manage your shop</h2><p data-en="Your information is saved in this browser on this device." data-ur="آپ کی معلومات اسی ڈیوائس کے براؤزر میں محفوظ ہوں گی۔">Your information is saved in this browser on this device.</p></div></div>
+    <div class="dashboard">
+      <form id="shopForm" class="panel">
+        <h3 data-en="Shop details" data-ur="دکان کی تفصیل">Shop details</h3>
+        <label><span data-en="Shop name" data-ur="دکان کا نام">Shop name</span><input id="shopName" maxlength="50" placeholder="e.g. The Yarn Nest" required></label>
+        <label><span data-en="Short description" data-ur="مختصر تعارف">Short description</span><input id="shopDesc" maxlength="100" placeholder="What do you sell?"></label>
+        <label><span data-en="WhatsApp number (with country code)" data-ur="واٹس ایپ نمبر (ملکی کوڈ کے ساتھ)">WhatsApp number (with country code)</span><input id="whatsapp" inputmode="tel" placeholder="923001234567"></label>
+        <button class="primary-btn full" type="submit" data-en="Save shop details" data-ur="دکان کی معلومات محفوظ کریں">Save shop details</button>
+      </form>
+      <form id="productForm" class="panel">
+        <h3 data-en="Add a product" data-ur="نئی پروڈکٹ شامل کریں">Add a product</h3>
+        <label><span data-en="Product name" data-ur="پروڈکٹ کا نام">Product name</span><input id="productName" maxlength="60" placeholder="Product name" required></label>
+        <label><span data-en="Price (PKR)" data-ur="قیمت (روپے)">Price (PKR)</span><input id="productPrice" type="number" min="0" step="1" placeholder="1250" required></label>
+        <label><span data-en="Product photo" data-ur="پروڈکٹ کی تصویر">Product photo</span><input id="productImage" type="file" accept="image/*"></label>
+        <label><span data-en="Short details (optional)" data-ur="مختصر تفصیل (اختیاری)">Short details (optional)</span><input id="productDesc" maxlength="100" placeholder="Color, size, material..."></label>
+        <button class="primary-btn full" type="submit" data-en="Add product" data-ur="پروڈکٹ شامل کریں">Add product</button>
+        <p class="small-note" data-en="Demo limit: 5 products. Images are stored in this browser." data-ur="ڈیمو حد: 5 مصنوعات۔ تصاویر اسی براؤزر میں محفوظ ہوں گی۔">Demo limit: 5 products. Images are stored in this browser.</p>
+      </form>
+    </div>
+    <div class="tools-row">
+      <button class="secondary-btn" id="printBtn">⬇ Download / Print catalog</button>
+      <button class="secondary-btn" id="invoiceBtn">＋ Invoice generator</button>
+      <button class="danger-btn" id="resetBtn">Reset demo data</button>
+    </div>
+    <div class="panel invoice-panel" id="invoicePanel" hidden>
+      <h3>Quick invoice</h3>
+      <div class="invoice-fields">
+        <label>Customer name<input id="customerName" placeholder="Customer name"></label>
+        <label>Item / service<input id="invoiceItem" placeholder="Item name"></label>
+        <label>Amount (PKR)<input id="invoiceAmount" type="number" min="0" placeholder="1500"></label>
+      </div>
+      <button class="primary-btn" id="makeInvoice">Create invoice</button>
+      <div id="invoiceOutput"></div>
+    </div>
+  </section>
+</main>
+<footer><b>DukaanSnap</b><span>Made for small businesses in Pakistan.</span><span>© <span id="year"></span> DukaanSnap</span></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
